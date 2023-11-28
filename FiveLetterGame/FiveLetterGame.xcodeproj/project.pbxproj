@@ -19,6 +19,13 @@
 		736B98062B16028A009D5D63 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98052B16028A009D5D63 /* StringExtension.swift */; };
 		736B98082B1602B4009D5D63 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98072B1602B4009D5D63 /* UIViewExtension.swift */; };
 		736B980A2B1602C5009D5D63 /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98092B1602C5009D5D63 /* NSLayoutConstraintExtension.swift */; };
+		736B980E2B1603D1009D5D63 /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B980D2B1603D1009D5D63 /* ProgressManager.swift */; };
+		736B98102B1603E9009D5D63 /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B980F2B1603E9009D5D63 /* DefaultValues.swift */; };
+		736B98122B160406009D5D63 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98112B160406009D5D63 /* Service.swift */; };
+		736B98142B160423009D5D63 /* ViewControllersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98132B160423009D5D63 /* ViewControllersManager.swift */; };
+		736B98162B16045C009D5D63 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98152B16045C009D5D63 /* GameManager.swift */; };
+		736B98182B160484009D5D63 /* WordsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98172B160484009D5D63 /* WordsManager.swift */; };
+		736B981A2B1604A7009D5D63 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 736B98192B1604A7009D5D63 /* words.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		736B98052B16028A009D5D63 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		736B98072B1602B4009D5D63 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		736B98092B1602C5009D5D63 /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
+		736B980D2B1603D1009D5D63 /* ProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
+		736B980F2B1603E9009D5D63 /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
+		736B98112B160406009D5D63 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		736B98132B160423009D5D63 /* ViewControllersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersManager.swift; sourceTree = "<group>"; };
+		736B98152B16045C009D5D63 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		736B98172B160484009D5D63 /* WordsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsManager.swift; sourceTree = "<group>"; };
+		736B98192B1604A7009D5D63 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,7 @@
 		736B97E92B15FB9E009D5D63 /* FiveLetterGame */ = {
 			isa = PBXGroup;
 			children = (
+				736B980B2B160393009D5D63 /* Managers */,
 				736B97FE2B16023E009D5D63 /* Extension */,
 				736B97EA2B15FB9E009D5D63 /* AppDelegate.swift */,
 				736B97EC2B15FB9E009D5D63 /* SceneDelegate.swift */,
@@ -91,6 +106,28 @@
 				736B98092B1602C5009D5D63 /* NSLayoutConstraintExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		736B980B2B160393009D5D63 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				736B980C2B16039A009D5D63 /* WordsManager */,
+				736B980D2B1603D1009D5D63 /* ProgressManager.swift */,
+				736B980F2B1603E9009D5D63 /* DefaultValues.swift */,
+				736B98112B160406009D5D63 /* Service.swift */,
+				736B98132B160423009D5D63 /* ViewControllersManager.swift */,
+				736B98152B16045C009D5D63 /* GameManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		736B980C2B16039A009D5D63 /* WordsManager */ = {
+			isa = PBXGroup;
+			children = (
+				736B98192B1604A7009D5D63 /* words.json */,
+				736B98172B160484009D5D63 /* WordsManager.swift */,
+			);
+			path = WordsManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				736B97F72B15FB9F009D5D63 /* LaunchScreen.storyboard in Resources */,
+				736B981A2B1604A7009D5D63 /* words.json in Resources */,
 				736B97F42B15FB9F009D5D63 /* Assets.xcassets in Resources */,
 				736B97F22B15FB9E009D5D63 /* Main.storyboard in Resources */,
 			);
@@ -164,10 +202,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				736B98182B160484009D5D63 /* WordsManager.swift in Sources */,
 				736B97EF2B15FB9E009D5D63 /* ViewController.swift in Sources */,
 				736B980A2B1602C5009D5D63 /* NSLayoutConstraintExtension.swift in Sources */,
+				736B98142B160423009D5D63 /* ViewControllersManager.swift in Sources */,
+				736B98162B16045C009D5D63 /* GameManager.swift in Sources */,
 				736B98062B16028A009D5D63 /* StringExtension.swift in Sources */,
+				736B98102B1603E9009D5D63 /* DefaultValues.swift in Sources */,
 				736B98022B16025C009D5D63 /* UserDefaultWrapper.swift in Sources */,
+				736B98122B160406009D5D63 /* Service.swift in Sources */,
+				736B980E2B1603D1009D5D63 /* ProgressManager.swift in Sources */,
 				736B97EB2B15FB9E009D5D63 /* AppDelegate.swift in Sources */,
 				736B97ED2B15FB9E009D5D63 /* SceneDelegate.swift in Sources */,
 				736B98042B160278009D5D63 /* UICollectionViewExtension.swift in Sources */,
