@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  FiveLetterGame
+
+  Created by Дарья Ауст on 28.11.2023.
+  
+*/
+
+"Continue current game" = "Продолжить текущую игру";
+"Start a new game" = "Начать новую игру";
+"count letters" = "%d букв";
+"Alert text" = "К сожалению попытки закончились - загаданное слово было %@, но вы можете сыграть еще раз";
+"Quit the game" = "Выйти из игры";
+"Play again" = "Играть еще раз";

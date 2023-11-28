@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  FiveLetterGame
+
+  Created by Дарья Ауст on 28.11.2023.
+  
+*/
+
+"Continue current game" = "Continue current game";
+"Start a new game" = "Start a new game";
+"count letters" = "%d letters";
+"Alert text" = "Unfortunately, the attempts ended - the hidden word was %@, but you can play again";
+"Quit the game" = "Quit the game";
+"Play again" = "Play again";
