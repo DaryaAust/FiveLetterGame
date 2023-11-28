@@ -44,6 +44,7 @@
                         </button>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="8Ru-2Z-vgR"/>
                         <constraint firstItem="Lur-i1-h6z" firstAttribute="height" secondItem="G8N-fK-aue" secondAttribute="height" id="ZU4-5Z-4W4"/>
                     </constraints>
                 </stackView>
@@ -53,7 +54,7 @@
             <constraints>
                 <constraint firstItem="KLq-lj-VAu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="01t-zc-8jo"/>
                 <constraint firstItem="KLq-lj-VAu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5Vi-Qn-a3Q"/>
-                <constraint firstItem="KLq-lj-VAu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="YU3-IX-JTk"/>
+                <constraint firstItem="KLq-lj-VAu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" priority="999" constant="40" id="YU3-IX-JTk"/>
             </constraints>
             <point key="canvasLocation" x="40" y="20"/>
         </view>

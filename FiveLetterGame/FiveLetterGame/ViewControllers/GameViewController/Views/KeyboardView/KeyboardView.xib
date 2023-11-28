@@ -23,13 +23,13 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="291"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scf-6p-MFM">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="scf-6p-MFM">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="93.666666666666671"/>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYg-nL-BmD">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TYg-nL-BmD">
                     <rect key="frame" x="0.0" y="98.666666666666657" width="393" height="93.666666666666657"/>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VF0-7N-IPh">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VF0-7N-IPh">
                     <rect key="frame" x="39.333333333333343" y="197.33333333333334" width="314.33333333333326" height="93.666666666666657"/>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rua-Xi-KG0">

@@ -10,17 +10,19 @@ import UIKit
 class GameViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var keyboardView: KeyboardView!
+    @IBOutlet private weak var collectionViewLeadingConstraint: NSLayoutConstraint!
     
     var presenter: GameViewPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureConstraints()
         configure()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.checkWord()
+        presenter.presentFailedAlertIfNeeded()
     }
 }
 
@@ -42,9 +44,9 @@ private extension GameViewController {
         keyboardView.delegate = self
         
         keyboardView.configure(
-            for: ["Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ"],
-            secondArray: ["Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э"],
-            thirdArray: ["Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю"]
+            for: presenter.keyboardFirstLine,
+            secondArray: presenter.keyboardSecondLine,
+            thirdArray: presenter.keyboardThirdLine
         )
         presenter.needUpdateKeyboard()
     }
@@ -58,11 +60,16 @@ private extension GameViewController {
             .foregroundColor: UIColor.appWhite
         ]
         navigationController?.navigationBar.tintColor = .appWhite
-        title = String(format: "%d букв", presenter.countСharacter)
+        title = String(format: "count letters".localized, presenter.countСharacter)
         
         navigationItem.backAction = UIAction { [weak self] _ in
             self?.presenter.quitGame(withSavingWords: true)
-            self?.dismissView()
+        }
+    }
+    
+    func configureConstraints() {
+        if UIDevice.isPad {
+            collectionViewLeadingConstraint.isActive = false
         }
     }
 }
@@ -108,24 +115,37 @@ extension GameViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        .init(width: collectionView.frame.width, height: 6)
     }
 }
 
 extension GameViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberColumns = CGFloat(presenter.numberOfLetters)
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
-        let size:CGFloat = (collectionView.frame.size.width - space) / 5.0
+        let size: CGFloat = (collectionView.frame.width - (numberColumns - 1) * space) / numberColumns
         return CGSize(width: size, height: size)
     }
 }
 
 extension GameViewController: GameView {
+    func updateStateDelete(_ state: Bool) {
+        keyboardView.updateDeleteButton(state: state)
+    }
+    
+    func updateStateCheck(_ state: Bool) {
+        keyboardView.updateCheckButton(state: state)
+    }
+    
     func updateKeyboard(styles: [String : GameLetterStyle]) {
         keyboardView.updateStyle(styles: styles)
     }
@@ -137,13 +157,13 @@ extension GameViewController: GameView {
             preferredStyle: UIAlertController.Style.alert
         )
         alert.addAction(UIAlertAction(
-            title: "Играть еще раз",
+            title: "Play again".localized,
             style: .default) { [weak self] _ in
                 self?.presenter.startNewGame()
             }
         )
         alert.addAction(UIAlertAction(
-            title: "Выйти из игры",
+            title: "Quit the game".localized,
             style: .default) { [weak self] _ in
                 self?.presenter.quitGame(withSavingWords: false)
             }

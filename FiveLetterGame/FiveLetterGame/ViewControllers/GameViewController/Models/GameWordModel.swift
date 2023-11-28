@@ -17,6 +17,8 @@ protocol GameWordModelProtocol: AnyObject {
     var lastEnteredWord: String { get }
     var numberOfAttempts: Int { get }
     var numberOfLetters: Int { get }
+    var deleteActionState: Bool { get }
+    var checkActionState: Bool { get }
     
     func configureLetterWithStyle(forWord wordIndex: Int,
                                   andLetter letterIndex: Int) -> (String, GameLetterStyle)
@@ -38,14 +40,28 @@ class GameWordModel: GameWordModelProtocol {
     var countLetter: Int {
         correctWord.count
     }
+    var lastEnteredWordIndex: Int {
+        enteredWords.count - 1
+    }
     var lastEnteredWord: String {
-        return enteredWords[enteredWords.count - 1]
+        get {
+            enteredWords[lastEnteredWordIndex]
+        }
+        set {
+            enteredWords[lastEnteredWordIndex] = newValue
+        }
     }
     var numberOfLetters: Int {
         DefaultValues.numberOfLetters
     }
     var numberOfAttempts: Int {
         DefaultValues.numberOfAttempts
+    }
+    var deleteActionState: Bool {
+        !lastEnteredWord.isEmpty
+    }
+    var checkActionState: Bool {
+        lastEnteredWord.count == numberOfLetters
     }
     
     init(correctWord: String, enteredWords: [String]) {
@@ -70,11 +86,11 @@ extension GameWordModel {
         guard lastEnteredWord.count < numberOfLetters else {
             return
         }
-        enteredWords[enteredWords.count - 1] = lastEnteredWord.appending(letter)
+        lastEnteredWord = lastEnteredWord.appending(letter)
     }
     
     func removeLastLetter() {
-        enteredWords[enteredWords.count - 1] = String(lastEnteredWord.dropLast())
+        lastEnteredWord = String(lastEnteredWord.dropLast())
     }
     
     func checkWord() -> GameCheckState {
@@ -104,7 +120,7 @@ extension GameWordModel {
         let letter = word.substring(letterIndex)
         
         guard word.count == numberOfLetters,
-              wordIndex != (enteredWords.count - 1) else {
+              wordIndex != (lastEnteredWordIndex) else {
             return (letter, .nope)
         }
         

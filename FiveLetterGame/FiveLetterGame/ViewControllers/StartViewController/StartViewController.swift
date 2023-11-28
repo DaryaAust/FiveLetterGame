@@ -47,8 +47,8 @@ extension StartViewController: StartView {
 private extension StartViewController {
     func configure() {
         configureView()
-        configureButton(continueButton, withText: "continueButton")
-        configureButton(startNewButton, withText: "startNewButton")
+        configureButton(continueButton, withText: "Continue current game")
+        configureButton(startNewButton, withText: "Start a new game")
         configureNavigation()
         
         continueButton.isHidden = !presenter.hasCurrentGame
@@ -57,7 +57,7 @@ private extension StartViewController {
     func configureButton(_ button: UIButton, withText text: String) {
         button.setAttributedTitle(
             NSAttributedString(
-                string: text,
+                string: text.localized,
                 attributes: [
                     .font: UIFont.systemFont(ofSize: 14),
                     .foregroundColor: UIColor.appBlack

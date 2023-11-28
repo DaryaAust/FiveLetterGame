@@ -20,9 +20,9 @@ protocol GameKeyboardModelProtocol: AnyObject {
 class GameKeyboardModel: GameKeyboardModelProtocol {
     private (set) var keyboardStyles: [String: GameLetterStyle] = [:]
     
-    private (set) var firstLineOfKeyboard = ["Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ"]
-    private (set) var secondLineOfKeyboard = ["Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э"]
-    private (set) var thirdLineOfKeyboard = ["Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю"]
+    let firstLineOfKeyboard = ["Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ"]
+    let secondLineOfKeyboard = ["Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э"]
+    let thirdLineOfKeyboard = ["Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю"]
     
     init(enteredWords: [String], correctWord: String) {
         configureKeyboardStyles(for: enteredWords, and: correctWord)

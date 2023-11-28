@@ -19,7 +19,7 @@ class WordsManager: WordsManagerProtocol {
     }
     
     func getWord(for index: Int) -> String? {
-        guard index < words.count else {
+        guard words.indices.contains(index) else {
             return nil
         }
         return words[index]
@@ -34,9 +34,9 @@ private extension WordsManager {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
             let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-            if let jsonResult = jsonResult as? Dictionary<String, AnyObject>,
+            if let jsonResult = jsonResult as? [String: AnyObject],
                let jsonWords = jsonResult["words"] as? [String] {
-                words = jsonWords.map({ $0.uppercased() })
+                words = jsonWords.map { $0.uppercased() }
             }
         } catch {
             print(error.localizedDescription)

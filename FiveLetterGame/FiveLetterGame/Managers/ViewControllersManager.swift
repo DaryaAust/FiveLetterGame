@@ -12,9 +12,9 @@ protocol ViewControllersManagerProtocol: AnyObject {
     
     func configureGameVC(for correctWord: String,
                          enteredWords: [String],
-                         delegate: GameUpdating) -> GameViewController?
+                         updating: GameUpdating) -> GameViewController?
     func configureStartVC(with isHasUnfinishedGame: Bool,
-                          delegate: GameUpdating) -> UINavigationController?
+                          updating: GameUpdating) -> UINavigationController?
     
     func updateStartVC(with isHasUnfinishedGame: Bool)
     func updateGameVC(with correctWord: String,
@@ -35,7 +35,7 @@ class ViewControllersManager: ViewControllersManagerProtocol {
 extension ViewControllersManager {
     func configureGameVC(for correctWord: String,
                          enteredWords: [String],
-                         delegate: GameUpdating) -> GameViewController? {
+                         updating: GameUpdating) -> GameViewController? {
         let keyboardModel = GameKeyboardModel(enteredWords: enteredWords, correctWord: correctWord)
         let wordModel = GameWordModel(correctWord: correctWord, enteredWords: enteredWords)
         let view = GameViewController()
@@ -44,7 +44,7 @@ extension ViewControllersManager {
             keyboardModel: keyboardModel,
             view: view
         )
-        presenter.updating = delegate
+        presenter.updating = updating
         view.presenter = presenter
         
         gamePresenter = presenter
@@ -52,7 +52,7 @@ extension ViewControllersManager {
     }
     
     func configureStartVC(with isHasUnfinishedGame: Bool,
-                          delegate: GameUpdating) -> UINavigationController? {
+                          updating: GameUpdating) -> UINavigationController? {
         
         let startModel = StartModel(hasCurrentGame: isHasUnfinishedGame)
         let view = StartViewController()
@@ -60,7 +60,7 @@ extension ViewControllersManager {
             model: startModel,
             view: view
         )
-        presenter.updating = delegate
+        presenter.updating = updating
         view.presenter = presenter
         
         startPresenter = presenter

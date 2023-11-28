@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController" customModule="FiveLetterGame" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="6nI-MT-54o" id="RLI-k6-cJt"/>
+                <outlet property="collectionViewLeadingConstraint" destination="oh3-Vt-1Hn" id="upA-4g-iCd"/>
                 <outlet property="keyboardView" destination="jpM-4M-xx5" id="BII-Pa-uKh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,31 +22,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6nI-MT-54o">
-                    <rect key="frame" x="16" y="209.33333333333334" width="361" height="433.33333333333326"/>
+                    <rect key="frame" x="16" y="205.66666666666666" width="361" height="440.66666666666674"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="6nI-MT-54o" secondAttribute="height" multiplier="5:6" id="jGC-Fh-XoE"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="550" id="hXk-nA-Cs2"/>
+                        <constraint firstAttribute="width" secondItem="6nI-MT-54o" secondAttribute="height" multiplier="5:6" constant="-6" id="jGC-Fh-XoE"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bM0-4M-Ubb">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="bM0-4M-Ubb">
                         <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="headerReferenceSize" width="0.0" height="6"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpM-4M-xx5" customClass="KeyboardView" customModule="FiveLetterGame" customModuleProvider="target">
-                    <rect key="frame" x="16" y="662.66666666666663" width="361" height="155.33333333333337"/>
+                    <rect key="frame" x="16" y="666.33333333333337" width="361" height="151.66666666666663"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="oXt-la-KYx"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="jpM-4M-xx5" firstAttribute="leading" secondItem="6nI-MT-54o" secondAttribute="leading" id="1jL-Wl-7xs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jpM-4M-xx5" secondAttribute="bottom" id="4Xh-Sn-fdH"/>
-                <constraint firstItem="6nI-MT-54o" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="AlY-tD-g5F"/>
+                <constraint firstItem="jpM-4M-xx5" firstAttribute="top" secondItem="6nI-MT-54o" secondAttribute="bottom" constant="20" id="6BP-wv-NDy"/>
+                <constraint firstItem="6nI-MT-54o" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" priority="999" id="AlY-tD-g5F"/>
                 <constraint firstItem="6nI-MT-54o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FXP-iv-Tvz"/>
-                <constraint firstItem="jpM-4M-xx5" firstAttribute="top" secondItem="6nI-MT-54o" secondAttribute="bottom" constant="20" id="Ugb-hP-NZR"/>
+                <constraint firstItem="jpM-4M-xx5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Htb-Me-7EL"/>
+                <constraint firstItem="6nI-MT-54o" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="KA9-jV-RxS"/>
                 <constraint firstItem="jpM-4M-xx5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UlX-tg-TNT"/>
                 <constraint firstItem="6nI-MT-54o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="oh3-Vt-1Hn"/>
             </constraints>

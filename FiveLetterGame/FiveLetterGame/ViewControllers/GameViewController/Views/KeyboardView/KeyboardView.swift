@@ -65,6 +65,14 @@ class KeyboardView: UIView {
     @IBAction private func removeButtonAction(_ sender: Any) {
         delegate?.keyboardViewRemove(self)
     }
+    
+    func updateCheckButton(state: Bool) {
+        updateButton(checkButton, for: state)
+    }
+    
+    func updateDeleteButton(state: Bool) {
+        updateButton(deleteButton, for: state)
+    }
 }
 
 private extension KeyboardView {
@@ -102,8 +110,12 @@ private extension KeyboardView {
     
     func configureButton(_ button: UIButton) {
         button.layer.cornerRadius = 4
-        button.backgroundColor = .appGrey
-        button.tintColor = .appWhite
+        updateButton(button, for: false)
+    }
+    
+    func updateButton(_ button: UIButton, for state: Bool) {
+        button.backgroundColor = state ? .appWhite : .appGrey
+        button.tintColor = state ? .appBlack : .appWhite
     }
     
     func updateButtonsStyleFrom(_ stackView: UIStackView, styles: [String: GameLetterStyle]) {
@@ -114,7 +126,6 @@ private extension KeyboardView {
                 return
             }
             button.backgroundColor = style.backgroundColor
-            //button.titleLabel?.textColor = style.titleColor
             
             button.setAttributedTitle(
                 NSAttributedString(

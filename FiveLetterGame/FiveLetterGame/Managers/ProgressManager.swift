@@ -8,8 +8,8 @@
 import Foundation
 
 protocol ProgressProtocol {
-    var currentGameIndex: Int { get set }
-    var currentGameWords: [String] { get set }
+    var currentGameIndex: Int { get }
+    var currentGameWords: [String] { get }
     
     func saveProgress(index: Int, words: [String])
 }

@@ -83,11 +83,11 @@ extension GameManager: GameManagerProtocol {
         guard let word = wordsManager.getWord(for: currentIndexGame) else {
             return nil
         }
-        return controllersManager.configureGameVC(for: word, enteredWords: currentWordsForSave, delegate: self)
+        return controllersManager.configureGameVC(for: word, enteredWords: currentWordsForSave, updating: self)
     }
     
     func configureStartVC() -> UINavigationController? {
-        controllersManager.configureStartVC(with: isHasUnfinishedGame, delegate: self)
+        controllersManager.configureStartVC(with: isHasUnfinishedGame, updating: self)
     }
     
     func saveProgress() {

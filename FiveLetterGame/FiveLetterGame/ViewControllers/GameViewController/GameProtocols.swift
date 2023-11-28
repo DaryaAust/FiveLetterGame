@@ -13,6 +13,9 @@ protocol GameView: AnyObject {
     
     func dismissView()
     func updateView()
+    
+    func updateStateDelete(_ state: Bool)
+    func updateStateCheck(_ state: Bool)
 }
 
 protocol GameViewPresenter: AnyObject {
@@ -21,6 +24,9 @@ protocol GameViewPresenter: AnyObject {
     var numberOfLetters: Int { get }
     var countСharacter: Int { get }
     var enteredWords: [String] { get }
+    var keyboardFirstLine: [String] { get }
+    var keyboardSecondLine: [String] { get }
+    var keyboardThirdLine: [String] { get }
     
     func update(correctWord: String, enteredWords: [String])
     
@@ -34,4 +40,5 @@ protocol GameViewPresenter: AnyObject {
     func quitGame(withSavingWords isSave: Bool)
     func saveProgress()
     func startNewGame()
+    func presentFailedAlertIfNeeded()
 }
