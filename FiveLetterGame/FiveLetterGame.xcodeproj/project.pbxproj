@@ -31,6 +31,17 @@
 		736B98232B1605CA009D5D63 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98222B1605CA009D5D63 /* StartPresenter.swift */; };
 		736B98252B1605DE009D5D63 /* StartProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98242B1605DE009D5D63 /* StartProtocols.swift */; };
 		736B98272B1605ED009D5D63 /* StartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98262B1605ED009D5D63 /* StartModel.swift */; };
+		736B982C2B160667009D5D63 /* GameKeyboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B982B2B160667009D5D63 /* GameKeyboardModel.swift */; };
+		736B982E2B16067F009D5D63 /* GameWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B982D2B16067F009D5D63 /* GameWordModel.swift */; };
+		736B98312B160707009D5D63 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98302B160707009D5D63 /* KeyboardView.swift */; };
+		736B98332B16070D009D5D63 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736B98322B16070D009D5D63 /* KeyboardView.xib */; };
+		736B98372B1608F9009D5D63 /* GameLetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98352B1608F9009D5D63 /* GameLetterCell.swift */; };
+		736B98382B1608F9009D5D63 /* GameLetterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736B98362B1608F9009D5D63 /* GameLetterCell.xib */; };
+		736B983B2B160950009D5D63 /* GameLetterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B983A2B160950009D5D63 /* GameLetterStyle.swift */; };
+		736B983E2B16096B009D5D63 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B983C2B16096B009D5D63 /* GameViewController.swift */; };
+		736B983F2B16096B009D5D63 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 736B983D2B16096B009D5D63 /* GameViewController.xib */; };
+		736B98412B160A12009D5D63 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98402B160A12009D5D63 /* GamePresenter.swift */; };
+		736B98432B160A31009D5D63 /* GameProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B98422B160A31009D5D63 /* GameProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +71,17 @@
 		736B98222B1605CA009D5D63 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
 		736B98242B1605DE009D5D63 /* StartProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartProtocols.swift; sourceTree = "<group>"; };
 		736B98262B1605ED009D5D63 /* StartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartModel.swift; sourceTree = "<group>"; };
+		736B982B2B160667009D5D63 /* GameKeyboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKeyboardModel.swift; sourceTree = "<group>"; };
+		736B982D2B16067F009D5D63 /* GameWordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWordModel.swift; sourceTree = "<group>"; };
+		736B98302B160707009D5D63 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		736B98322B16070D009D5D63 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
+		736B98352B1608F9009D5D63 /* GameLetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLetterCell.swift; sourceTree = "<group>"; };
+		736B98362B1608F9009D5D63 /* GameLetterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameLetterCell.xib; sourceTree = "<group>"; };
+		736B983A2B160950009D5D63 /* GameLetterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLetterStyle.swift; sourceTree = "<group>"; };
+		736B983C2B16096B009D5D63 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		736B983D2B16096B009D5D63 /* GameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		736B98402B160A12009D5D63 /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
+		736B98422B160A31009D5D63 /* GameProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +166,7 @@
 		736B981B2B1604D5009D5D63 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				736B98282B160642009D5D63 /* GameViewController */,
 				736B981C2B1604DE009D5D63 /* StartViewController */,
 			);
 			path = ViewControllers;
@@ -159,6 +182,64 @@
 				736B98262B1605ED009D5D63 /* StartModel.swift */,
 			);
 			path = StartViewController;
+			sourceTree = "<group>";
+		};
+		736B98282B160642009D5D63 /* GameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				736B98392B160943009D5D63 /* Helper */,
+				736B982A2B160652009D5D63 /* Views */,
+				736B98292B16064A009D5D63 /* Models */,
+				736B983C2B16096B009D5D63 /* GameViewController.swift */,
+				736B983D2B16096B009D5D63 /* GameViewController.xib */,
+				736B98402B160A12009D5D63 /* GamePresenter.swift */,
+				736B98422B160A31009D5D63 /* GameProtocols.swift */,
+			);
+			path = GameViewController;
+			sourceTree = "<group>";
+		};
+		736B98292B16064A009D5D63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				736B982B2B160667009D5D63 /* GameKeyboardModel.swift */,
+				736B982D2B16067F009D5D63 /* GameWordModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		736B982A2B160652009D5D63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				736B98342B1608EC009D5D63 /* GameLetterCell */,
+				736B982F2B1606F9009D5D63 /* KeyboardView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		736B982F2B1606F9009D5D63 /* KeyboardView */ = {
+			isa = PBXGroup;
+			children = (
+				736B98302B160707009D5D63 /* KeyboardView.swift */,
+				736B98322B16070D009D5D63 /* KeyboardView.xib */,
+			);
+			path = KeyboardView;
+			sourceTree = "<group>";
+		};
+		736B98342B1608EC009D5D63 /* GameLetterCell */ = {
+			isa = PBXGroup;
+			children = (
+				736B98352B1608F9009D5D63 /* GameLetterCell.swift */,
+				736B98362B1608F9009D5D63 /* GameLetterCell.xib */,
+			);
+			path = GameLetterCell;
+			sourceTree = "<group>";
+		};
+		736B98392B160943009D5D63 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				736B983A2B160950009D5D63 /* GameLetterStyle.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,11 +300,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				736B983F2B16096B009D5D63 /* GameViewController.xib in Resources */,
 				736B97F72B15FB9F009D5D63 /* LaunchScreen.storyboard in Resources */,
 				736B981A2B1604A7009D5D63 /* words.json in Resources */,
 				736B97F42B15FB9F009D5D63 /* Assets.xcassets in Resources */,
 				736B97F22B15FB9E009D5D63 /* Main.storyboard in Resources */,
+				736B98382B1608F9009D5D63 /* GameLetterCell.xib in Resources */,
 				736B98202B1604F2009D5D63 /* StartViewController.xib in Resources */,
+				736B98332B16070D009D5D63 /* KeyboardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,11 +321,14 @@
 				736B98182B160484009D5D63 /* WordsManager.swift in Sources */,
 				736B981F2B1604F2009D5D63 /* StartViewController.swift in Sources */,
 				736B97EF2B15FB9E009D5D63 /* ViewController.swift in Sources */,
+				736B983B2B160950009D5D63 /* GameLetterStyle.swift in Sources */,
 				736B980A2B1602C5009D5D63 /* NSLayoutConstraintExtension.swift in Sources */,
+				736B983E2B16096B009D5D63 /* GameViewController.swift in Sources */,
 				736B98142B160423009D5D63 /* ViewControllersManager.swift in Sources */,
 				736B98162B16045C009D5D63 /* GameManager.swift in Sources */,
 				736B98062B16028A009D5D63 /* StringExtension.swift in Sources */,
 				736B98102B1603E9009D5D63 /* DefaultValues.swift in Sources */,
+				736B98432B160A31009D5D63 /* GameProtocols.swift in Sources */,
 				736B98022B16025C009D5D63 /* UserDefaultWrapper.swift in Sources */,
 				736B98122B160406009D5D63 /* Service.swift in Sources */,
 				736B980E2B1603D1009D5D63 /* ProgressManager.swift in Sources */,
@@ -249,9 +336,14 @@
 				736B98252B1605DE009D5D63 /* StartProtocols.swift in Sources */,
 				736B98272B1605ED009D5D63 /* StartModel.swift in Sources */,
 				736B98232B1605CA009D5D63 /* StartPresenter.swift in Sources */,
+				736B98372B1608F9009D5D63 /* GameLetterCell.swift in Sources */,
+				736B98312B160707009D5D63 /* KeyboardView.swift in Sources */,
 				736B97ED2B15FB9E009D5D63 /* SceneDelegate.swift in Sources */,
+				736B98412B160A12009D5D63 /* GamePresenter.swift in Sources */,
+				736B982E2B16067F009D5D63 /* GameWordModel.swift in Sources */,
 				736B98042B160278009D5D63 /* UICollectionViewExtension.swift in Sources */,
 				736B98082B1602B4009D5D63 /* UIViewExtension.swift in Sources */,
+				736B982C2B160667009D5D63 /* GameKeyboardModel.swift in Sources */,
 				736B98002B16024B009D5D63 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
